@@ -1,0 +1,8 @@
+name: D-call-public-extra-input
+on:
+  workflow_dispatch:
+jobs:
+  call:
+    uses: PDFtoMark/gab-poc-reusable-resolve/.github/workflows/no-inputs-reusable.yml@main
+    with:
+      debug: true
