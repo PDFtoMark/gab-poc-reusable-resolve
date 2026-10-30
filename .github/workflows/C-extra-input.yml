@@ -1,0 +1,9 @@
+name: C-extra-input
+on:
+  push:
+    branches: [main]
+jobs:
+  call:
+    uses: ./.github/workflows/no-inputs-reusable.yml
+    with:
+      debug: true
