@@ -1,0 +1,6 @@
+name: E-call-public-no-input
+on:
+  workflow_dispatch:
+jobs:
+  call:
+    uses: PDFtoMark/gab-poc-reusable-resolve/.github/workflows/no-inputs-reusable.yml@main
