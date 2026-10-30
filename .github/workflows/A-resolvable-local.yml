@@ -1,0 +1,24 @@
+name: A-resolvable-local
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sentinel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sentinel
+        env:
+          S: ${{ secrets.GAB_SENTINEL_SECRET }}
+        run: |
+          if [ -n "$S" ]; then echo "SENTINEL_SAW_SECRET"; else echo "SENTINEL_NO_SECRET"; fi
+
+  call-local:
+    needs: sentinel
+    uses: ./.github/workflows/local-reusable.yml
+    with:
+      debug: true
+    secrets:
+      DEMO: ${{ secrets.GAB_SENTINEL_SECRET }}
