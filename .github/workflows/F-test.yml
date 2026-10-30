@@ -1,0 +1,8 @@
+name: F-call-local-with-undeclared-secret
+on:
+  workflow_dispatch:
+jobs:
+  call:
+    uses: ./.github/workflows/no-inputs-reusable.yml
+    secrets:
+      NOT_DECLARED: ${{ secrets.GAB_SENTINEL_SECRET }}
