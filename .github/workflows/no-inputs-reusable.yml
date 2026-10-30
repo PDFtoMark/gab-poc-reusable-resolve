@@ -1,0 +1,8 @@
+name: no-inputs-reusable
+on:
+  workflow_call:
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo NO_INPUTS_RECV
